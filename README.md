@@ -8,7 +8,7 @@ Voor deze opdracht moest ik een formulier maken met tien vragen over de opleidin
 
 Het doel was vooral om te leren hoe HTML-formulieren worden opgebouwd en om te begrijpen wat er gebeurt wanneer formuliergegevens worden verstuurd met `GET` en `POST`.
 
-Daarnaast maakte ik kennis met de basis van SCUD/CRUD en de rol van het `action`-attribuut binnen een formulier.
+Daarnaast maakte ik kennis met de basis van CRUD en de rol van het `action`-attribuut binnen een formulier.
 
 ## Functionaliteiten
 
