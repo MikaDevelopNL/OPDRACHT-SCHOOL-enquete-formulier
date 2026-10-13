@@ -4,7 +4,7 @@ if (isset($_GET['bericht'])) {
     echo '<p>' . htmlspecialchars($_GET['bericht'], ENT_QUOTES, 'UTF-8') . '</p>';
 }
 
-$bestand = __DIR__ . '/../../app/Http/Controllers/questionaire.txt';
+$bestand = __DIR__ . '/app/http/controllers/questionaire.txt';
 
 if (file_exists($bestand)) {
     $inhoud = file_get_contents($bestand);
