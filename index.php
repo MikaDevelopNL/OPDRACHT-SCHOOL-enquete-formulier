@@ -1,3 +1,21 @@
+<?php
+
+if (isset($_GET['bericht'])) {
+    echo '<p>' . htmlspecialchars($_GET['bericht'], ENT_QUOTES, 'UTF-8') . '</p>';
+}
+
+$bestand = __DIR__ . '/../../app/Http/Controllers/meldingen.txt';
+
+if (file_exists($bestand)) {
+    $inhoud = file_get_contents($bestand);
+    echo '<h2>Eerder opgeslagen meldingen</h2>';
+    echo '<pre>' . htmlspecialchars($inhoud, ENT_QUOTES, 'UTF-8') . '</pre>';
+} else {
+    echo '<p>Er zijn nog geen meldingen opgeslagen.</p>';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -7,9 +25,8 @@
     <link rel="stylesheet" href="/public_html/css/style.css">
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="../app/http/controllers/questController.php" method="POST">
         <h2>Enquete vragen</h2>
-
         <div class="form-group">
             <label for="name">Naam:</label>
             <input type="text" id="name" name="name" required>
@@ -34,18 +51,18 @@
             <legend>Welke taal vind jij het interessantst</legend>
             <div class="form-group">
                 <label for="HTML">HTML</label>
-                <input type="radio" id="HTML" name="programmeertaal" value="HTML" checked>
+                <input type="radio" id="HTML" name="programLanguage" value="HTML" checked>
             </div>
 
             
             <div class="form-group">
                 <label for="CSS">CSS</label>
-                <input type="radio" id="CSS" name="programmeertaal" value="CSS">
+                <input type="radio" id="CSS" name="programLanguage" value="CSS">
             </div>
 
             <div class="form-group">
                 <label for="Javascript">Javascript</label>
-                <input type="radio" id="Javascript" name="programmeertaal" value="Javascript">
+                <input type="radio" id="Javascript" name="programLanguage" value="Javascript">
             </div>
         </fieldset>
         
@@ -69,8 +86,8 @@
         </fieldset>
 
         <div class="form-group">
-            <label for="before">Wat deed je voor de opleiding?(opleiding of werk)</label>
-            <input type="text" id="before" name="before" required>
+            <label for="before-studie">Wat deed je voor de opleiding? (opleiding of werk)</label>
+            <input type="text" id="before-studie" name="before-studie" required>
         </div>
 
         <div class="form-group">
@@ -79,8 +96,8 @@
         </div>
 
         <div class="form-group">
-            <label for="how-long">Hoe lang programmeer je al?</label>
-            <select id="how-long" name="how-long" required>
+            <label for="program-time">Hoe lang programmeer je al?</label>
+            <select id="program-time" name="program-time" required>
                 <option value="" disabled selected>-- Kies je optie --</option>
                 <option value="beginner">Beginner(aantal maanden)</option>
                 <option value="gevorderd-beginner">Gevorderd beginner(meer dan een half jaar)</option>
