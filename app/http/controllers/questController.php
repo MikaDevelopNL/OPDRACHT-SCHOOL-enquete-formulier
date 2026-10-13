@@ -28,7 +28,7 @@ $errors = [];
 $validAge = filter_var($age, FILTER_VALIDATE_INT) !== false
     && (int) $age > 16;
 // Kijkt of het een getal is tussen de 1 en 10
-$validGrade = filter_var($age, FILTER_VALIDATE_INT) !== false
+$validGrade = filter_var($grade, FILTER_VALIDATE_INT) !== false
     && ((int) $grade >= 1 && (int) $grade <= 10);
 
 // Kijkt of het een geldige datum is 
